@@ -1,0 +1,12 @@
+nav {
+    display: flex;
+    padding: 1rem 10%;
+    font-size: 1.5rem;
+    background-color: beige;
+    align-items: center;
+}
+.links {
+    flex: 1;
+    display: flex;
+    gap: 5%;
+}
