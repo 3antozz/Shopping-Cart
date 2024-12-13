@@ -1,0 +1,10 @@
+.homepage {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 1;
+    flex-direction: column;
+    gap: 10%;
+    font-size: 1.5rem;
+
+}

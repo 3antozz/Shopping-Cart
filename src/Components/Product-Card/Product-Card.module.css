@@ -1,0 +1,28 @@
+.card {
+    width: 27%;
+    padding: 2rem 3%;
+    background-color: beige;
+    border-radius: 20px;
+}
+
+.card input {
+    width: 2.8rem;
+    padding: 1px 5px;
+}
+
+.card > * {
+    margin-bottom: 0.5rem;
+}
+
+.info {
+    display: flex;
+    align-items: center;
+}
+
+.info h4 {
+    flex: 1;
+}
+
+.card button {
+    width: 100%;
+}

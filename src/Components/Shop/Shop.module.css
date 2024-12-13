@@ -1,0 +1,7 @@
+.shop {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 2rem 8%;
+    justify-content: center;
+    gap: 5dvh;
+}
