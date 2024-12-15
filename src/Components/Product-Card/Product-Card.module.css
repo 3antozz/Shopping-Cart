@@ -15,6 +15,14 @@
     padding: 1px 5px;
 }
 
+.card > a {
+    text-decoration: none;
+}
+
+.card > a:hover {
+    text-decoration: underline;
+}
+
 .card > * {
     margin-bottom: 0.5rem;
 }
@@ -31,6 +39,11 @@
     height: 220px;
     object-fit: contain;
     margin-bottom: 1rem;
+    transition: transform 150ms ease-out;
+}
+
+.card img:hover {
+    transform: scale(1.1);
 }
 
 .info {

@@ -3,7 +3,7 @@ import ProductCard from "../Product-Card/Product-Card";
 import PropTypes from "prop-types";
 import { useOutletContext } from "react-router-dom";
 export default function Shop() {
-    const { products, error, loading } = useOutletContext();
+    const { products, error, loading, handleAddToCart } = useOutletContext();
 
     if (error)
         return <div className={styles.shop}><h1>Oops, an Error has Occured! Please try again later</h1></div>;
@@ -14,6 +14,7 @@ export default function Shop() {
                 <ProductCard
                     key={product.id}
                     product={product}
+                    onSubmit={handleAddToCart}
                 />
             ))}
         </div>
