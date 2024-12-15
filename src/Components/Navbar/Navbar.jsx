@@ -6,10 +6,10 @@ export default function Navbar({count = 0}) {
     return (
         <nav>
             <div className={styles.links}>
-                <Link to='/Home'>Home</Link>
-                <Link to='/Shop'>Shop</Link>
+                <Link to='/home'>Home</Link>
+                <Link to='/shop'>Shop</Link>
             </div>
-            <Link to='/Summary'><ShoppingCart size={35}/><div><p className={styles.num}>{count}</p></div></Link>
+            <Link to='/summary'><ShoppingCart size={35}/><div><p className={styles.num}>{count}</p></div></Link>
         </nav>
     );
 }

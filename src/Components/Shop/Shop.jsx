@@ -3,17 +3,17 @@ import ProductCard from "../Product-Card/Product-Card";
 import PropTypes from "prop-types";
 import { useOutletContext } from "react-router-dom";
 export default function Shop() {
-    const { products, error } = useOutletContext();
+    const { products, error, loading } = useOutletContext();
+
     if (error)
-        return <h1>Oops, an Error has Occured! Please try again later</h1>;
+        return <div className={styles.shop}><h1>Oops, an Error has Occured! Please try again later</h1></div>;
+    if (loading) return <div className={styles.shop}><h1>Loading Products, Please Wait...</h1></div>;
     return (
         <div className={styles.shop}>
             {products.map((product) => (
                 <ProductCard
                     key={product.id}
-                    imgURL={product.image}
-                    title={product.title}
-                    price={product.price}
+                    product={product}
                 />
             ))}
         </div>

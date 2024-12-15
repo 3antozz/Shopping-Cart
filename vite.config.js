@@ -9,6 +9,7 @@ export default defineConfig({
     setupFiles: './tests/setup.js',
   },
   server: {
+    historyApiFallback: true, // Enable fallback routing
     watch: {
       usePolling: true, // Useful for fixing HMR issues
     },

@@ -1,8 +1,13 @@
 .card {
     width: 27%;
     padding: 2rem 3%;
-    background-color: beige;
     border-radius: 20px;
+    box-shadow: 1px 1px 4px 1px #80808061;
+    transition: transform 250ms ease;
+}
+
+.card:hover {
+    transform: scale(1.07);
 }
 
 .card input {
@@ -12,6 +17,20 @@
 
 .card > * {
     margin-bottom: 0.5rem;
+}
+
+.card > h4 {
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.card img {
+    margin: auto;
+    width: 170px;
+    height: 220px;
+    object-fit: contain;
+    margin-bottom: 1rem;
 }
 
 .info {

@@ -6,7 +6,7 @@ export default function Homepage () {
     return (
         <div className={styles.homepage}>
             <h1>Welcome to 3ANTOSHOP</h1>
-            <Link to='/Shop'><h1>Start Shopping Now</h1></Link>
+            <Link to='/shop'><h1>Start Shopping Now</h1></Link>
         </div>
     )
 }

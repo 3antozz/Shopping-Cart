@@ -3,6 +3,7 @@ import ErrorPage from "./ErrorPage";
 import Homepage from "./Components/Homepage/Homepage";
 import Shop from "./Components/Shop/Shop";
 import Summary from "./Components/Order-Summary/Order-Summary";
+import Details from "./Components/Details/Details";
 
 const routes = [
   {
@@ -14,15 +15,24 @@ const routes = [
         index: true, element: <Homepage /> 
       },
       {
-        path: "Home",
+        path: "home",
         element: <Homepage />,
       },
       {
-        path: "Shop",
-        element: <Shop />,
+        path: "shop",
+        children: [
+          {
+            index: true,
+            element: <Shop />,
+          },
+          {
+            path: "products/:productId",
+            element: <Details />,
+          },
+        ]
       },
       {
-        path: "Summary",
+        path: "summary",
         element: <Summary />,
       },
     ]

@@ -6,9 +6,11 @@ let isFetched = false;
 const App = () => {
   const [products, setProducts] = useState(null);
   const [error, setError] = useState(null);
+  const [loading, setLoading] = useState(true)
 
   useEffect(() => {
     if(!isFetched) {
+      isFetched = true;
       fetch('https://fakestoreapi.com/products', { mode: "cors" })
       .then(response => {
         if (!response.ok) {
@@ -16,9 +18,10 @@ const App = () => {
         }
         return response.json()})
       .then(data => {
-        isFetched = true;
         console.log(data);
-        setProducts(data)})
+        setProducts(data)
+        setLoading(false);
+      })
       .catch(error => setError(error))
     }
   }, [])
@@ -26,7 +29,7 @@ const App = () => {
   return (
     <>
         <Navbar/>
-        <Outlet context={{products, error}}/>
+        <Outlet context={{products, error, loading}}/>
     </>
   );
 };
