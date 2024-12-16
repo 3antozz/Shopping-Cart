@@ -1,7 +1,12 @@
+.detail {
+    flex: 1;
+    padding: 2rem 10%;
+    align-content: center;
+}
+
 .details {
     display: flex;
     align-items: center;
-    margin: auto 10%;
     padding: 3%;
     gap: 10%;
     box-shadow: 1px 1px 4px 1px #80808061;

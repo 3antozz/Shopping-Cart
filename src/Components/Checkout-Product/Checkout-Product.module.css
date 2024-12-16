@@ -1,0 +1,42 @@
+.productCard {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+    border-radius: 20px;
+    box-shadow: 1px 1px 4px 1px #80808061;
+    align-items: center;
+    padding: 1rem 5%;
+    width: 22%;
+    min-width: 200px;
+}
+
+
+.productCard > h3 {
+    text-align: center;
+    font-size: clamp(1.1rem, 1.2vw, 1.3rem);
+}
+
+
+.productCard a:nth-child(2) {
+    font-size: clamp(1.2rem, 1.3vw, 1.4rem);
+    flex: 1;
+    width: 100%;
+    display: inline-block;
+    text-decoration: none;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.productCard a:nth-child(2):hover {
+    text-decoration: underline;
+}
+
+.productCard img {
+    width: 130px;
+    height: 180px;
+    object-fit: contain;
+}
+
+@media (max-width: 768px) {
+}

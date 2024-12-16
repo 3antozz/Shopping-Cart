@@ -2,16 +2,22 @@ import styles from "./Details.module.css";
 import PropTypes from "prop-types";
 import {useLocation, useOutletContext } from "react-router-dom";
 import { Star } from 'lucide-react';
+import { useState } from "react";
 
 export default function Details () {
     const { state } = useLocation();
     const { handleAddToCart } = useOutletContext();
+    const [inputValue, setInputValue] = useState(1);
+    function handleInput (event) {
+        setInputValue(event.target.value);
+    }
     // const { products } = useOutletContext();
     // const {productId} = useParams();
     // const product = products.find((element) => element.id === +productId);
     // console.log(product);
     return (
-        <div className={styles.details}>
+        <div className={styles.detail}>
+            <div className={styles.details}>
             <img src={state.image} alt={state.title} />
             <div className={styles.right}>
                 <h1>{state.title}</h1>
@@ -19,12 +25,13 @@ export default function Details () {
                 <h2>Price: {state.price}$</h2>
                 <h2>Description:</h2>
                 <p>{state.description}</p>
-                <form className={styles.quantity} onSubmit={(event) => handleAddToCart(event, state.id)}>
+                <form className={styles.quantity} onSubmit={(event) => handleAddToCart(event, state.id, +inputValue)}>
                     <label htmlFor="quantity"></label>
-                    <input type="number" id="quantity" min={1} defaultValue={1} />
+                    <input type="number" id="quantity" min={1} max={100} value={inputValue} onChange={handleInput}  />
                     <button>Add to Cart</button>
                 </form>
             </div>
+        </div>
         </div>
     )
 
@@ -33,7 +40,7 @@ export default function Details () {
 const Rating = ({rating}) => {
     const rate = Math.round(rating);
     let array = [];
-    for (let i=0; i < 6; i++) {
+    for (let i=0; i < 5; i++) {
         i < rate ? array.push(true) : array.push(false)
     }
 

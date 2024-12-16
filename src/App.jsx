@@ -9,17 +9,21 @@ const App = () => {
   const [loading, setLoading] = useState(true);
   const [cartIDs, setCartIDs] = useState([]);
 
-  function handleAddToCart (event, productID) {
+  function removeProduct (productID) {
+    const index = cartIDs.findIndex((prod) => prod.id === productID);
+    setCartIDs(cartIDs.toSpliced(index, 1));
+  }
+
+  function handleAddToCart (event, productID, value) {
     event.preventDefault();
     const array = cartIDs.slice();
     const product = array.findIndex((element) => element.id === productID);
     if (product > -1) {
-      array[product] = {id: productID, quantity: array[product].quantity + 1 };
-      setCartIDs(() => array);
+      array[product] = {id: productID, quantity: value};
+      setCartIDs(array);
     } else {
-      setCartIDs((prev) => [...prev, {id: productID, quantity: 1}])
+      setCartIDs((prev) => [...prev, {id: productID, quantity: value}])
     }
-    console.log(cartIDs);
   }
 
   useEffect(() => {
@@ -43,7 +47,7 @@ const App = () => {
   return (
     <>
         <Navbar count={cartIDs.length}/>
-        <Outlet context={{products, error, loading, cartIDs, handleAddToCart}}/>
+        <Outlet context={{products, error, loading, cartIDs, handleAddToCart, removeProduct}}/>
     </>
   );
 };

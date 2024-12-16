@@ -4,6 +4,7 @@
     border-radius: 20px;
     box-shadow: 1px 1px 4px 1px #80808061;
     transition: transform 250ms ease;
+    min-width: 200px;
 }
 
 .card:hover {
@@ -15,9 +16,6 @@
     padding: 1px 5px;
 }
 
-.card > a {
-    text-decoration: none;
-}
 
 .card > a:hover {
     text-decoration: underline;
@@ -27,7 +25,11 @@
     margin-bottom: 0.5rem;
 }
 
-.card > h4 {
+.card a:nth-child(2) {
+    font-size: clamp(1.2rem, 1.3vw, 1.4rem);
+    width: 100%;
+    text-decoration: none;
+    display: inline-block;
     text-overflow: ellipsis;
     white-space: nowrap;
     overflow: hidden;
