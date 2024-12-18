@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom'
 export default function Homepage () {
     return (
         <div className={styles.homepage}>
-            <h1>Welcome to 3ANTOSHOP</h1>
+            <h1>Welcome to <h1 style={{color: "red"}}>3ANTOSHOP</h1></h1>
             <Link to='/shop'><h1>Shop Now</h1></Link>
         </div>
     )
