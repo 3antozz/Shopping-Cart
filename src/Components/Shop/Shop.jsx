@@ -2,13 +2,19 @@ import styles from "./Shop.module.css";
 import ProductCard from "../Product-Card/Product-Card";
 import PropTypes from "prop-types";
 import { useOutletContext } from "react-router-dom";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { LoaderCircle, Search } from "lucide-react";
 export default function Shop() {
     const { products, error, loading, handleAddToCart } = useOutletContext();
     const [popup, setPopup] = useState([]);
     const [inputValue, setInputValue] = useState("");
-    const [filtered, setFiltered] = useState([]);
+    const [filtered, setFiltered] = useState(products || []);
+
+    useEffect(() => {
+        if (products) {
+            setFiltered(products)
+        }
+    }, [products]);
 
     function handleSearch (event) {
         setInputValue(event.target.value);

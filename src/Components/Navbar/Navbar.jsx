@@ -9,6 +9,7 @@ export default function Navbar({count = 0}) {
                 <Link to='/home'>Home</Link>
                 <Link to='/shop'>Shop</Link>
             </div>
+            <Link to='/home' className={styles.brand}>3antoshop</Link>
             <Link to='/summary'><ShoppingCart size={35}/><div><p className={styles.num}>{count}</p></div></Link>
         </nav>
     );

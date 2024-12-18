@@ -6,7 +6,21 @@ nav {
     align-items: center;
     font-weight: bold;
     box-shadow: 1px 1px 4px 1px #80808061;
+    position: relative;
 }
+
+.brand {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    transform-origin: center;
+}
+
+.brand:hover {
+    transform: translateX(-50%) scale(1.2);
+    color: rgb(133, 133, 248);
+}
+
 .links {
     flex: 1;
     display: flex;
@@ -20,7 +34,7 @@ nav a {
     position: relative;
 }
 
-nav a:hover {
+nav a:not(.brand):hover {
     transform: scale(1.2);
     color: rgb(133, 133, 248);
 }
