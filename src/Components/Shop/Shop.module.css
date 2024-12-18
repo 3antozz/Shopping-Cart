@@ -1,4 +1,4 @@
-.shop {
+.products {
     display: flex;
     flex-wrap: wrap;
     padding: 2rem 8%;
@@ -29,6 +29,33 @@
 .loading, .error {
     margin: auto;
     text-align: center;
+}
+
+.search {
+    display: flex;
+    align-self: center;
+    position: relative;
+    align-items: center;
+    width: 250px;
+}
+
+.search input {
+    border-radius: 10px;
+    border: 1px solid black;
+    padding: 0.3rem 0.5rem;
+    width: 100%;
+    font-size: 1.1rem;
+}
+
+.search svg {
+    position: absolute;
+    right: 5px;
+}
+
+.shop {
+    display: flex;
+    flex-direction: column;
+    padding: 1.5rem;
 }
 
 .spinner {
