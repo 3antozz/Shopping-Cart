@@ -4,4 +4,20 @@
     padding: 2rem 8%;
     justify-content: center;
     gap: 5dvh;
+    position: relative;
+}
+
+.popups {
+    position: fixed;
+    top: 25px;
+    right: 10px;
+    z-index: 999;
+}
+
+.popup {
+    background-color: beige;
+    margin-bottom: 1rem;
+    padding: 1.5rem;
+    border-radius: 15px;
+    font-size: 1.3rem;
 }

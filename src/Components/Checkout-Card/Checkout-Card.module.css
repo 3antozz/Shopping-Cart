@@ -1,0 +1,45 @@
+.card {
+    width: 25%;
+    box-shadow: 1px 1px 4px 1px #80808061;
+    border-radius: 15px;
+    padding: 1.5rem;
+    align-self: flex-start;
+}
+
+.info {
+    display: flex;
+    margin-bottom: 0.5rem;
+}
+
+.info > *:first-child {
+    flex: 1;
+}
+
+.info:nth-child(3) > h2:first-child {
+    flex: none;
+}
+
+.info:nth-child(3) {
+    justify-content: center;
+    gap: 1.5rem;
+    margin-top: 1rem;
+}
+
+.card button {
+    display: block;
+    margin: auto;
+    font-weight: bold;
+    border-radius: 15px;
+    font-size: 1.3rem;
+    padding: 0.5rem 2rem;
+    background-color: rgba(255, 0, 0, 0.745);
+    color: white;
+    border: 1px solid black;
+    transition: transform 200ms ease;
+}
+
+.card button:hover {
+    transform: scale(1.1);
+    background-color: rgb(210, 3, 3);
+    cursor: pointer;
+}

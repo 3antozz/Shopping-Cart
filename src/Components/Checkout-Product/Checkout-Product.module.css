@@ -1,12 +1,12 @@
 .productCard {
+    position: relative;
     display: flex;
-    flex-direction: column;
-    gap: 0.25rem;
+    gap: 1.5rem;
     border-radius: 20px;
     box-shadow: 1px 1px 4px 1px #80808061;
     align-items: center;
-    padding: 1rem 5%;
-    width: 22%;
+    padding: 1rem 1vw;
+    width: 400px;
     min-width: 200px;
 }
 
@@ -16,27 +16,103 @@
     font-size: clamp(1.1rem, 1.2vw, 1.3rem);
 }
 
-
-.productCard a:nth-child(2) {
+.productCard > div {
     font-size: clamp(1.2rem, 1.3vw, 1.4rem);
-    flex: 1;
     width: 100%;
     display: inline-block;
-    text-decoration: none;
     text-overflow: ellipsis;
     white-space: nowrap;
     overflow: hidden;
 }
 
-.productCard a:nth-child(2):hover {
+.input > div {
+    display: flex;
+    align-items: center;
+    margin-top: 1rem;
+}
+
+.input > div button {
+    border-radius: 10px;
+    background: none;
+    border: none;
+    width: 30px;
+    font-size: 1.5rem;
+}
+
+.input > div button:hover {
+    background: red;
+    color: white;
+}
+
+.input > div button:active {
+    transform: scale(1.1);
+}
+
+
+
+.input a:hover {
     text-decoration: underline;
 }
 
-.productCard img {
+.input a {
+    text-decoration: none;
+}
+
+.productCard  img {
     width: 130px;
-    height: 180px;
+    height: 140px;
     object-fit: contain;
 }
+
+.productCard input {
+    width: 2.5rem;
+    padding: 2px 5px;
+    border-radius: 5px;
+    border: 1px solid black;
+    text-align: center;
+}
+
+.productCard > button {
+    font-family: monospace;
+    position: absolute;
+    top: 2%;
+    right: 2%;
+    font-weight: bold;
+    border-radius: 15px;
+    font-size: 1.3rem;
+    line-height: 0;
+    padding: 1rem 0.5rem;
+    background-color: rgba(255, 0, 0, 0);
+    color: white;
+    border: none;
+    color: red;
+    transition: transform 200ms ease;
+}
+
+.productCard > button:hover {
+    transform: scale(1.1);
+    background-color: rgb(255, 20, 20);
+    cursor: pointer;
+    color: white;
+}
+
+.productCard h3 {
+    flex: 1;
+    font-size: 1.2rem;
+    margin-top: 0.5rem;
+    line-height: 0;
+}
+
+.productCard label {
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+/* .input {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+} */
 
 @media (max-width: 768px) {
 }

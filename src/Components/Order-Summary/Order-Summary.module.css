@@ -1,7 +1,6 @@
 .summary {
     display: flex;
-    flex-direction: column;
-    padding: 2rem 8%;
+    padding: 4rem 8%;
     gap: 3rem;
 }
 
@@ -14,7 +13,9 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    align-self: center;
     gap: 1rem;
+    flex: 1;
 }
 
 .checkout {

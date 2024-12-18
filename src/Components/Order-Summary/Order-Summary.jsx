@@ -1,6 +1,7 @@
 import styles from "./Order-Summary.module.css";
 import { useOutletContext } from "react-router-dom";
 import CheckoutProduct from "../Checkout-Product/Checkout-Product";
+import CheckoutCard from "../Checkout-Card/Checkout-Card";
 export default function Summary () {
     const { products, error, loading, cartIDs, handleAddToCart, removeProduct } = useOutletContext();
     const cartObj = {};
@@ -23,13 +24,10 @@ export default function Summary () {
     if (loading) return <div className={styles.summary}><h1>Loading Products, Please Wait...</h1></div>;
     return (
         <div className={styles.summary}>
-            <div className={styles.checkout}>
-                <h1>Total:&nbsp;{total.toFixed(2)}$</h1>
-                <button>CHECKOUT</button>
-            </div>
             <div className={styles.products}>
                 {cartProducts.map((product) => <CheckoutProduct key={product.id} product={product} onChange={handleAddToCart} onRemove={removeProduct}/>)}
             </div>
+            <CheckoutCard total={Number(total.toFixed(2))} />
         </div>
     )
 }

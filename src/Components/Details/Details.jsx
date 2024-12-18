@@ -8,6 +8,18 @@ export default function Details () {
     const { state } = useLocation();
     const { handleAddToCart } = useOutletContext();
     const [inputValue, setInputValue] = useState(1);
+    function incrementInput (event) {
+        setInputValue((prev) => {
+            if (event.target.className === "increment") {
+                return +prev + 1;
+            } else {
+                if (prev > 1) {
+                    return +prev - 1;
+                }
+                return +prev;
+            }
+        })
+    }
     function handleInput (event) {
         setInputValue(event.target.value);
     }
@@ -26,9 +38,13 @@ export default function Details () {
                 <h2>Description:</h2>
                 <p>{state.description}</p>
                 <form className={styles.quantity} onSubmit={(event) => handleAddToCart(event, state.id, +inputValue)}>
-                    <label htmlFor="quantity"></label>
-                    <input type="number" id="quantity" min={1} max={100} value={inputValue} onChange={handleInput}  />
-                    <button>Add to Cart</button>
+                    <div>
+                        <label htmlFor="quantity"></label>
+                        <button type="button" onClick={incrementInput}>-</button>
+                        <input type="number" id="quantity" min={1} max={100} value={inputValue} onChange={handleInput}  />
+                        <button type="button" onClick={incrementInput} className="increment">+</button>
+                    </div>
+                    <button type="submit">Add to Cart</button>
                 </form>
             </div>
         </div>

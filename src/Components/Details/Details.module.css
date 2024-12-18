@@ -52,6 +52,64 @@
     display: flex;
 }
 
+.quantity {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
+
+.quantity label {
+    display: none;
+}
+
+.quantity input {
+    width: 3.5rem;
+    padding: 5px 5px;
+    border-radius: 5px;
+    border: 1px solid black;
+    text-align: center;
+}
+
+.quantity button[type="button"] {
+    border-radius: 10px;
+    background: none;
+    border: none;
+    width: 30px;
+    font-size: 1.5rem;
+    color: black;
+}
+
+.quantity button[type="button"]:hover {
+    background: red;
+    color: white;
+}
+
+.quantity button[type="button"]:active {
+    transform: scale(1.1);
+}
+
+.quantity button[type="submit"] {
+    font-weight: bold;
+    border-radius: 15px;
+    font-size: 1.4rem;
+    padding: 0.4rem 1.2rem;
+    background-color: rgba(255, 0, 0, 0.745);
+    color: white;
+    border: 1px solid black;
+    transition: transform 200ms ease;
+}
+
+.quantity button[type="submit"]:hover {
+    transform: scale(1.1);
+    background-color: rgb(210, 3, 3);
+    cursor: pointer;
+}
+
+.quantity > div {
+    display: flex;
+    gap: 0.5rem;
+}
+
 @media (max-width: 768px) {
     .details {
         flex-direction: column;

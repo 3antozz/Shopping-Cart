@@ -1,5 +1,5 @@
 .card {
-    width: 27%;
+    width: 350px;
     padding: 2rem 3%;
     border-radius: 20px;
     box-shadow: 1px 1px 4px 1px #80808061;
@@ -12,8 +12,28 @@
 }
 
 .card input {
-    width: 2.8rem;
-    padding: 1px 5px;
+    width: 2.5rem;
+    padding: 5px 5px;
+    border-radius: 5px;
+    border: 1px solid black;
+    text-align: center;
+}
+
+.input button {
+    border-radius: 10px;
+    background: none;
+    border: none;
+    width: 30px;
+    font-size: 1.5rem;
+}
+
+.input button:hover {
+    background: red;
+    color: white;
+}
+
+.input button:active {
+    transform: scale(1.1);
 }
 
 
@@ -48,15 +68,47 @@
     transform: scale(1.1);
 }
 
-.info {
+
+.quantity {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.input {
     display: flex;
     align-items: center;
+    gap: 0.5rem;
 }
 
-.info h4 {
+.card input[type="number"] {
+    appearance: textfield;
+}
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+}
+
+.input h4 {
     flex: 1;
+    font-size: 1.3rem;
 }
 
-.card button {
+.card button[type="submit"] {
+    font-weight: bold;
+    border-radius: 15px;
+    font-size: 1.2rem;
+    padding: 0.2rem 1rem;
+    background-color: rgba(255, 0, 0, 0.745);
+    color: white;
+    border: 1px solid black;
+    transition: transform 200ms ease;
     width: 100%;
+}
+
+.card button[type="submit"]:hover {
+    transform: scale(1.1);
+    background-color: rgb(210, 3, 3);
+    cursor: pointer;
 }
