@@ -1,11 +1,13 @@
 .homepage {
+    font-family: 'Lobster Two';
     display: flex;
     align-items: center;
     justify-content: center;
     flex: 1;
     flex-direction: column;
     gap: 1rem;
-    font-size: 1.5rem;
+    font-size: clamp(1.15rem, 1.6vw, 1.8rem);
+    text-align: center;
 }
 
 .homepage a {

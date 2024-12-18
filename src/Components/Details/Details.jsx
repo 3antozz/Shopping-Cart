@@ -23,10 +23,7 @@ export default function Details () {
     function handleInput (event) {
         setInputValue(event.target.value);
     }
-    // const { products } = useOutletContext();
-    // const {productId} = useParams();
-    // const product = products.find((element) => element.id === +productId);
-    // console.log(product);
+
     return (
         <div className={styles.detail}>
             <div className={styles.details}>

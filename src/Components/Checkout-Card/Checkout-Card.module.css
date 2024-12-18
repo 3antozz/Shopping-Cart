@@ -1,5 +1,5 @@
 .card {
-    width: 25%;
+    width: 350px;
     box-shadow: 1px 1px 4px 1px #80808061;
     border-radius: 15px;
     padding: 1.5rem;
@@ -42,4 +42,10 @@
     transform: scale(1.1);
     background-color: rgb(210, 3, 3);
     cursor: pointer;
+}
+
+@media (max-width: 768px) {
+    .card {
+        width: 100%;
+    }
 }

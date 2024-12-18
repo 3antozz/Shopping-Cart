@@ -1,42 +1,36 @@
 nav {
+    font-family: 'Lobster Two';
     display: flex;
     padding: 1.8rem 10%;
-    font-size: 2rem;
+    font-size: clamp(1.6rem, 2.4vw, 2.5rem);
     background-color: rgb(243, 205, 164);
     align-items: center;
     font-weight: bold;
     box-shadow: 1px 1px 4px 1px #80808061;
     position: relative;
+    gap: 10rem;
 }
 
-.brand {
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-    transform-origin: center;
-}
-
-.brand:hover {
-    transform: translateX(-50%) scale(1.2);
-    color: rgb(133, 133, 248);
-}
-
-.links {
-    flex: 1;
-    display: flex;
-    gap: 7%;
-}
 
 nav a {
     text-decoration: none;
     color: inherit;
     transition: transform 150ms ease;
     position: relative;
+    transform-origin: center;
 }
 
-nav a:not(.brand):hover {
+nav a:hover {
     transform: scale(1.2);
     color: rgb(133, 133, 248);
+}
+
+.selected {
+    color: rgb(133, 133, 248);
+}
+
+nav a:nth-child(3) {
+    margin-left: auto;
 }
 
 nav a div {
@@ -56,3 +50,17 @@ nav a div {
     font-size: 1rem;
     line-height: 0;
 }
+
+@media (max-width: 768px) {
+    nav {
+        justify-content: space-between;
+        gap: 0;
+    }
+
+    nav a:nth-child(3) {
+        margin: 0;
+    }
+}
+
+
+

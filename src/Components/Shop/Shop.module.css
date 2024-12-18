@@ -36,7 +36,7 @@
     align-self: center;
     position: relative;
     align-items: center;
-    width: 250px;
+    width: max(250px, 25vw);
 }
 
 .search input {

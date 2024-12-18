@@ -1,10 +1,10 @@
 .card {
-    width: 350px;
-    padding: 2rem 3%;
+    width: 22vw;
+    padding: 1.2rem 3%;
     border-radius: 20px;
     box-shadow: 1px 1px 4px 1px #80808061;
     transition: transform 250ms ease;
-    min-width: 200px;
+    min-width: 250px;
 }
 
 .card:hover {
@@ -46,7 +46,7 @@
 }
 
 .card a:nth-child(2) {
-    font-size: clamp(1.2rem, 1.3vw, 1.4rem);
+    font-size: clamp(1.1rem, 1.3vw, 1.4rem);
     width: 100%;
     text-decoration: none;
     display: inline-block;
@@ -111,4 +111,15 @@ input[type=number]::-webkit-outer-spin-button {
     transform: scale(1.1);
     background-color: rgb(210, 3, 3);
     cursor: pointer;
+}
+
+@media (max-width: 768px) {
+    .card {
+        padding: 1.2rem 20px;
+    }
+    .card img {
+        width: 120px;
+        height: 170px;
+        object-fit: contain;
+    }
 }

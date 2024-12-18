@@ -7,7 +7,12 @@ import { useState } from "react";
 export default function Summary () {
     const { products, error, loading, cartIDs, handleAddToCart, removeProduct, clearCart } = useOutletContext();
     const [popup, setPopup] = useState(false);
-
+    if (cartIDs.length === 0) {
+        return <div className={styles.empty}>
+                    <h1>Your cart is empty :D !</h1>
+                    {popup && <div className={styles.popup}>Checkout Complete. Thank you for your purchase!</div>}
+                </div>
+    }
     function handlePopup () {
         clearCart()
         setPopup(true);
@@ -20,7 +25,6 @@ export default function Summary () {
     cartIDs.forEach((prod) => {
         cartObj[prod.id] = prod.quantity
     });
-
     if (!products) {
     return <div className={styles.empty}><LoaderCircle className={styles.spinner} size={75} color="rgba(255, 0, 0, 0.745)"/></div>
     }
@@ -31,12 +35,6 @@ export default function Summary () {
         }
         return result;
     }, []);
-    if (cartIDs.length === 0) {
-        return <div className={styles.empty}>
-                    <h1>Your cart is empty :D !</h1>
-                    {popup && <div className={styles.popup}>Checkout Complete. Thank you for your purchase!</div>}
-                </div>
-    }
     if (error)
         return <div className={styles.summary}><h1>Oops, an Error has Occured! Please try again later</h1></div>;
     if (loading) return (<div className={styles.summary}><h1>Loading Products, Please Wait...</h1></div>);

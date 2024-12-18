@@ -6,8 +6,10 @@
 }
 
 .empty {
+    font-family: 'Lobster Two';
     margin: auto;
-    font-size: 1.5rem;
+    font-size: clamp(1.2rem, 1.6vw, 1.8rem);
+    text-align: center;
 }
 
 .spinner {
@@ -73,5 +75,12 @@
 
     100% {
         transform: translateX(0);
+    }
+}
+
+@media (max-width: 768px) {
+    .summary {
+        flex-direction: column;
+        padding: 4rem 20px;
     }
 }
