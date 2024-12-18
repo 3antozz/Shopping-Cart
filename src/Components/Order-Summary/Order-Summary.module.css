@@ -2,14 +2,16 @@
     display: flex;
     padding: 4rem 8%;
     gap: 3rem;
-    position: relative;
 }
 
 .empty {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     font-family: 'Lobster Two';
-    margin: auto;
     font-size: clamp(1.2rem, 1.6vw, 1.8rem);
-    text-align: center;
+    position: relative;
 }
 
 .spinner {
@@ -54,13 +56,13 @@
 
 .popup {
     position: fixed;
-    top: 75px;
+    top: 100px;
     right: 10px;
     z-index: 999;
     background-color: beige;
     border-left: 5px solid red;
     border-right: 5px solid red;
-    margin-bottom: 1rem;
+    margin: auto;
     padding: 1.5rem;
     border-radius: 15px;
     font-size: 1.3rem;
@@ -82,5 +84,8 @@
     .summary {
         flex-direction: column;
         padding: 4rem 20px;
+    }
+    .popup {
+        right: auto;
     }
 }

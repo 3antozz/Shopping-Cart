@@ -8,6 +8,15 @@ export default function Details () {
     const { state } = useLocation();
     const { handleAddToCart } = useOutletContext();
     const [inputValue, setInputValue] = useState(1);
+    const [popup, setPopup] = useState(false);
+
+    function handlePopup () {
+        setPopup(true);
+        setTimeout(() => {
+            setPopup(false)
+        }, 4000)
+    }
+
     function incrementInput (event) {
         setInputValue((prev) => {
             if (event.target.className === "increment") {
@@ -27,6 +36,7 @@ export default function Details () {
     return (
         <div className={styles.detail}>
             <div className={styles.details}>
+            {popup && <div className={styles.popup}>Item added to the cart!</div>}
             <img src={state.image} alt={state.title} />
             <div className={styles.right}>
                 <h1>{state.title}</h1>
@@ -41,7 +51,7 @@ export default function Details () {
                         <input type="number" id="quantity" min={1} max={100} value={inputValue} onChange={handleInput}  />
                         <button type="button" onClick={incrementInput} className="increment">+</button>
                     </div>
-                    <button type="submit">Add to Cart</button>
+                    <button type="submit" onClick={handlePopup}>Add to Cart</button>
                 </form>
             </div>
         </div>

@@ -3,6 +3,7 @@
     padding: 2rem 10%;
     align-content: center;
     min-width: 300px;
+    position: relative;
 }
 
 .details {
@@ -12,6 +13,11 @@
     gap: 4%;
     box-shadow: 1px 1px 4px 1px #80808061;
     border-radius: 20px;
+}
+
+.popup {
+    font-family: 'Lobster Two';
+    composes: popup from '../Order-Summary/Order-Summary.module.css';
 }
 
 .error {
@@ -132,4 +138,11 @@
         font-size: 1.2rem;
     }
     
+}
+
+@media (max-width: 768px) {
+    .popup {
+        top: 10px;
+        right: auto;
+    }
 }
