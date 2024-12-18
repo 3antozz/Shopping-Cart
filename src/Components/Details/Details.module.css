@@ -13,6 +13,10 @@
     border-radius: 20px;
 }
 
+.error {
+    margin: auto;
+}
+
 .details img {
     min-width: 330px;
     width: 330px;

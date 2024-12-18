@@ -9,6 +9,10 @@ const App = () => {
   const [loading, setLoading] = useState(true);
   const [cartIDs, setCartIDs] = useState([]);
 
+  function clearCart () {
+    setCartIDs([]);
+  }
+
   function removeProduct (productID) {
     const index = cartIDs.findIndex((prod) => prod.id === productID);
     setCartIDs(cartIDs.toSpliced(index, 1));
@@ -47,7 +51,7 @@ const App = () => {
   return (
     <>
         <Navbar count={cartIDs.length}/>
-        <Outlet context={{products, error, loading, cartIDs, handleAddToCart, removeProduct}}/>
+        <Outlet context={{products, error, loading, cartIDs, handleAddToCart, removeProduct, clearCart}}/>
     </>
   );
 };

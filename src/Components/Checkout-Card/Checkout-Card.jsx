@@ -1,7 +1,7 @@
 import styles from './Checkout-Card.module.css'
 import PropTypes from 'prop-types';
 
-export default function CheckoutCard ({total}) {
+export default function CheckoutCard ({total, onClick}) {
     return (
         <div className={styles.card}>
             <div className={styles.info}>
@@ -16,7 +16,7 @@ export default function CheckoutCard ({total}) {
                 <h2>Total:</h2>
                 <h2>{total}&nbsp;$</h2>
             </div>
-            <button>Checkout</button>
+            <button onClick={onClick}>Checkout</button>
         </div>
 
     )
@@ -25,4 +25,5 @@ export default function CheckoutCard ({total}) {
 
 CheckoutCard.propTypes = {
     total: PropTypes.number.isRequired,
+    onClick: PropTypes.func.isRequired,
 }

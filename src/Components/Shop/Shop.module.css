@@ -9,15 +9,53 @@
 
 .popups {
     position: fixed;
-    top: 25px;
+    top: 75px;
     right: 10px;
     z-index: 999;
 }
 
 .popup {
     background-color: beige;
+    border-left: 5px solid red;
+    border-right: 5px solid red;
     margin-bottom: 1rem;
     padding: 1.5rem;
     border-radius: 15px;
     font-size: 1.3rem;
+    animation: ease alternate popin ;
+    animation-duration: 250ms;
+}
+
+.loading, .error {
+    margin: auto;
+    text-align: center;
+}
+
+.spinner {
+    animation: linear infinite rotating ;
+    animation-duration: 800ms;
+}
+
+@keyframes rotating {
+    0% {
+        transform: rotate(0);
+    }
+
+    50% {
+        transform: rotate(0.5turn);
+    }
+
+    100% {
+        transform: rotate(1turn);
+    }
+}
+
+@keyframes popin {
+    0% {
+        transform: translateX(120%);
+    }
+
+    100% {
+        transform: translateX(0);
+    }
 }

@@ -2,9 +2,10 @@ nav {
     display: flex;
     padding: 1.8rem 10%;
     font-size: 2rem;
-    background-color: beige;
+    background-color: rgb(243, 205, 164);
     align-items: center;
     font-weight: bold;
+    box-shadow: 1px 1px 4px 1px #80808061;
 }
 .links {
     flex: 1;
