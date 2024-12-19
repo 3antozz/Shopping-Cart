@@ -18,7 +18,7 @@ export default function ProductCard({product, onSubmit, handlePopup}) {
         setInputValue(event.target.value);
     }
     return (
-        <div className={styles.card}>
+        <div className={styles.card} data-testid="container">
             <Link to={`products/${product.id}`} state={ product } ><img src={product.image} alt={product.title} /></Link>
             <Link to={`products/${product.id}`} state={ product } >{product.title}</Link>
             <form className={styles.quantity} onSubmit={(event) => onSubmit(event, product.id, +inputValue)}>

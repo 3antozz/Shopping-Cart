@@ -1,0 +1,24 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Homepage component > matches snapshot 1`] = `
+<div>
+  <div
+    class="_homepage_4e2365"
+  >
+    <h1>
+      Welcome to 
+      <strong
+        style="color: red;"
+      >
+        3ANTOSHOP
+      </strong>
+    </h1>
+    <a
+      data-discover="true"
+      href="/shop"
+    >
+      Shop Now
+    </a>
+  </div>
+</div>
+`;
