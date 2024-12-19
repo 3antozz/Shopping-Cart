@@ -20,6 +20,17 @@
     composes: popup from '../Order-Summary/Order-Summary.module.css';
 }
 
+.spinner {
+    composes: spinner from "../Shop/Shop.module.css"
+}
+
+.loading {
+    flex: 1;
+    align-content: center;
+    margin: auto;
+}
+
+
 .error {
     margin: auto;
 }

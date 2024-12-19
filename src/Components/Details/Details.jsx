@@ -1,14 +1,19 @@
 import styles from "./Details.module.css";
 import PropTypes from "prop-types";
-import {useLocation, useOutletContext } from "react-router-dom";
-import { Star } from 'lucide-react';
+import {useOutletContext, useParams } from "react-router-dom";
+import { Star, LoaderCircle } from 'lucide-react';
 import { useState } from "react";
 
 export default function Details () {
-    const { state } = useLocation();
-    const { handleAddToCart } = useOutletContext();
+    const { loading, products, handleAddToCart } = useOutletContext();
+    const {productId} = useParams();
     const [inputValue, setInputValue] = useState(1);
     const [popup, setPopup] = useState(false);
+
+    if (!products || loading) {
+        return <div className={styles.loading}><LoaderCircle className={styles.spinner} size={75} color="rgba(255, 0, 0, 0.745)"/></div>
+    }
+    const product = products.find((element) => element.id === +productId);
 
     function handlePopup () {
         setPopup(true);
@@ -37,14 +42,14 @@ export default function Details () {
         <div className={styles.detail}>
             <div className={styles.details}>
             {popup && <div className={styles.popup}>Item added to the cart!</div>}
-            <img src={state.image} alt={state.title} />
+            <img src={product.image} alt={product.title} />
             <div className={styles.right}>
-                <h1>{state.title}</h1>
-                <h2 className={styles.rating}><Rating rating={state.rating.rate}/> ({state.rating.count})</h2>
-                <h2>Price: {state.price}$</h2>
+                <h1>{product.title}</h1>
+                <h2 className={styles.rating}><Rating rating={product.rating.rate}/> ({product.rating.count})</h2>
+                <h2>Price: {product.price}$</h2>
                 <h2>Description:</h2>
-                <p>{state.description}</p>
-                <form className={styles.quantity} onSubmit={(event) => handleAddToCart(event, state.id, +inputValue)}>
+                <p>{product.description}</p>
+                <form className={styles.quantity} onSubmit={(event) => handleAddToCart(event, product.id, +inputValue)}>
                     <div>
                         <label htmlFor="quantity"></label>
                         <button type="button" onClick={incrementInput}>-</button>

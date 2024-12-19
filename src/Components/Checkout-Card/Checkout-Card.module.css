@@ -4,6 +4,7 @@
     border-radius: 15px;
     padding: 1.5rem;
     align-self: flex-start;
+    min-width: 210px;
 }
 
 .info {
@@ -47,5 +48,6 @@
 @media (max-width: 768px) {
     .card {
         width: 100%;
+        order: 1;
     }
 }
