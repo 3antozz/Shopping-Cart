@@ -39,7 +39,7 @@ export default function Details () {
     }
 
     return (
-        <div className={styles.detail}>
+        <div className={styles.detail} data-testid="container">
             <div className={styles.details}>
             {popup && <div className={styles.popup}>Item added to the cart!</div>}
             <img src={product.image} alt={product.title} />

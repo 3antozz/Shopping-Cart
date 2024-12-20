@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 export default function CheckoutCard ({total, onClick}) {
     return (
-        <div className={styles.card}>
+        <div className={styles.card} data-testid="checkout-container">
             <div className={styles.info}>
                 <h3>Subtotal:</h3>
                 <h3>{total}&nbsp;$</h3>

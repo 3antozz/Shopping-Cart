@@ -25,7 +25,7 @@ export default function CheckoutProduct ({product, onChange, onRemove}) {
         onChange(event, product.id, +event.target.value);
     }
     return (
-        <div className={styles.productCard}>
+        <div className={styles.productCard} data-testid="product-container">
             <Link to={`/shop/products/${product.id}`} state={ product } ><img src={product.image} alt={product.title} /></Link>
             {/* <h3>Price: {product.price}$</h3> */}
             <div className={styles.input}>

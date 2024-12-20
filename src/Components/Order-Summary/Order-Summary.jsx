@@ -38,7 +38,7 @@ export default function Summary () {
         return result;
     }, []);
     return (
-        <div className={styles.summary}>
+        <div className={styles.summary} data-testid="summary-container">
             <div className={styles.products}>
                 {cartProducts.map((product) => <CheckoutProduct key={product.id} product={product} onChange={handleAddToCart} onRemove={removeProduct}/>)}
             </div>
