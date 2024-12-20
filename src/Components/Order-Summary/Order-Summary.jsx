@@ -13,10 +13,10 @@ export default function Summary () {
                     {popup && <div className={styles.popup}>Checkout Complete. Thank you for your purchase!</div>}
                 </div>
     }
-    if (!products || loading) {
-        return <div className={styles.empty}><LoaderCircle className={styles.spinner} size={75} color="rgba(255, 0, 0, 0.745)"/></div>
+    if (loading) {
+        return <div className={styles.empty} data-testid="loading-container"><LoaderCircle className={styles.spinner} size={75} color="rgba(255, 0, 0, 0.745)"/></div>
     }
-    if (error) return <div className={styles.summary}><h1>Oops, an Error has Occured! Please try again later</h1></div>;
+    if (!products || error) return <div className={styles.summary}><h1>Oops, an Error has Occured! Please try again later</h1></div>;
     function handlePopup () {
         clearCart()
         setPopup(true);

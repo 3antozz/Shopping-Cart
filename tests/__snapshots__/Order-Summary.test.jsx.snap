@@ -1,6 +1,6 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`Summary Component > matches snapshot 1`] = `
+exports[`Summary Component with products no loading > matches snapshot 1`] = `
 <div>
   <div>
     <h1>

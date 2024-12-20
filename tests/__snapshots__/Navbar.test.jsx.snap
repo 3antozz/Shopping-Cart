@@ -2,7 +2,9 @@
 
 exports[`Navbar component > matches snapshot 1`] = `
 <div>
-  <nav>
+  <nav
+    data-testid="navbar-container"
+  >
     <a
       class=""
       data-discover="true"

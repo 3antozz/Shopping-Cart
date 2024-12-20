@@ -50,11 +50,12 @@ export default function Shop() {
                     className={styles.spinner}
                     size={75}
                     color="rgba(255, 0, 0, 0.745)"
+                    data-testid="loading-container"
                 />
             </div>
         );
     return (
-        <div className={styles.shop}>
+        <div className={styles.shop} data-testid="shop-container">
             <form className={styles.search}>
                 <label htmlFor="search"></label>
                 <input
