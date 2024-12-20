@@ -37,6 +37,10 @@ export default function Shop() {
         }, 4000);
     }
 
+    function preventSubmit (event) {
+        event.preventDefault();
+    }
+
     if (error)
         return (
             <div className={styles.error}>
@@ -56,7 +60,7 @@ export default function Shop() {
         );
     return (
         <div className={styles.shop} data-testid="shop-container">
-            <form className={styles.search}>
+            <form className={styles.search} onSubmit={preventSubmit}>
                 <label htmlFor="search"></label>
                 <input
                     type="text"
